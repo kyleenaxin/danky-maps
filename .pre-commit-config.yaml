@@ -1,0 +1,31 @@
+repos:
+  # Python
+  - repo: local
+    hooks:
+      - id: ruff-format
+        name: Ruff formatter
+        entry: ruff format
+        language: python
+        additional_dependencies: [ruff]
+        types: [python]
+
+      - id: ruff-lint
+        name: Ruff linter
+        entry: ruff check
+        language: python
+        additional_dependencies: [ruff]
+        types: [python]
+
+      - id: mypy
+        name: Mypy type checker
+        entry: mypy
+        language: python
+        additional_dependencies: [mypy]
+        types: [python]
+
+      - id: pytest
+        name: Python tests
+        entry: pytest
+        language: system
+        pass_filenames: false
+        files: ^backend/

@@ -18,14 +18,13 @@ repos:
 
       - id: mypy
         name: Mypy type checker
-        entry: mypy
-        language: python
-        additional_dependencies: [mypy]
+        entry: uv run --project backend mypy
+        language: system
         types: [python]
 
       - id: pytest
         name: Python tests
-        entry: pytest
+        entry: uv run --project backend pytest backend/tests
         language: system
         pass_filenames: false
         files: ^backend/
